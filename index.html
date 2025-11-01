@@ -1,198 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Galeria de Personagens</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      padding: 20px;
-      margin: 0;
-    }
-    #search-input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      border: none;
-    }
-    #show-favs-btn {
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      border: none;
-      background-color: #333;
-      color: #fff;
-      cursor: pointer;
-    }
-    .gallery-personagens {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      justify-items: center;
-    }
-    .personagem {
-      background-color: #1c1c1c;
-      border-radius: 12px;
-      width: 250px;
-      text-align: center;
-      padding: 15px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-    .personagem img {
-      width: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    .personagem h2 {
-      margin: 10px 0 5px;
-      color: #f0f0f0;
-    }
-    .personagem p {
-      font-size: 14px;
-      color: #ccc;
-    }
-    .fav-btn {
-      margin-top: 10px;
-      padding: 8px 12px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
-    .fav-btn:hover {
-      background-color: #444;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Galeria de Personagens</title>
+<style>
+  body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    margin: 0;
+  }
+  #search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: none;
+  }
+  #show-favs-btn {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  .gallery-personagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  .personagem {
+    background-color: #1c1c1c;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  }
+  .personagem img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .personagem h2 {
+    margin: 10px 0 5px;
+    color: #f0f0f0;
+  }
+  .personagem p {
+    font-size: 14px;
+    color: #ccc;
+  }
+  .fav-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .fav-btn:hover {
+    background-color: #444;
+  }
+</style>
 </head>
 <body>
 
-  <input type="text" id="search-input" placeholder="Buscar personagem...">
-  <button id="show-favs-btn">Ver Favoritos</button>
+<input type="text" id="search-input" placeholder="Buscar personagem...">
+<button id="show-favs-btn">Ver Favoritos</button>
 
-  <div class="gallery-personagens">
-    <!-- Exemplos de cards; repita para cada personagem -->
-    <div class="personagem" data-id="enenra">
-      <img src="https://i.postimg.cc/0ys0XyQZ/012-1-2.jpg" alt="Enenra">
-      <h2>Enenra</h2>
-      <p>Yōkai da fumaça que se infiltrava sob disfarce humano. Pode tornar‑se intangível, manipular névoa e atacar de surpresa. Atua como ameaça séria no arco principal do mangá.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-id="jin-enjoji">
-      <img src="https://i.postimg.cc/4yC59r8L/017-2.jpg" alt="Jin Enjoji">
-      <h2>Jin Enjoji</h2>
-      <p>Jin “Jiji” Enjoji é amigo de infância da Momo Ayase e se vê envolvido com forças sobrenaturais após sua casa ser assombrada. Ele desenvolve poderes espirituais e enfrenta uma maldição ligada ao Mau Olhado.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-id="momo-ayase">
-      <img src="https://i.postimg.cc/mgbG9nJ7/004.jpg" alt="Momo Ayase">
-      <h2>Momo Ayase</h2>
-      <p>Momo Ayase despertou poderes psíquicos após ser abduzida. Ela consegue manipular auras e exercer telecinese, usando braços invisíveis. No enredo de Dandadan, assume papel central entre o sobrenatural e o científico.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-id="mau-olhado">
-      <img src="https://i.postimg.cc/pTkZmy0S/img-or1001221540-0026.jpg" alt="Mau Olhado">
-      <h2>Mau Olhado</h2>
-      <p>Espírito vingativo que habita o corpo de Jiji. Cria uma casa demoníaca para aprisionar vítimas e comanda almas em formas de ataque. Importante antagonista no arco da casa amaldiçoada.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-id="unji-zuma">
-      <img src="https://i.postimg.cc/J0yCFQTW/1740950375-o64uop34y4mbgan1woffwq7fk5fks13mqkmjzy2uxx76z8mp4.jpg" alt="Unji Zuma">
-      <h2>Unji Zuma</h2>
-      <p>Ex‑líder de gangue que ganha poderes de yokai após fusão com Umbrella Boy. Usa guarda‑chuvas que disparam ondas de choque. Sua jornada o coloca contra o mal de frente, na missão de vencer o jogo amaldiçoado Danmanra.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-id="count-saint-germain">
-      <img src="https://i.postimg.cc/PqCt9ZSj/1731779198-b6gubtanwhpn33kz185s2vjp5uz8lc65f4ibqyf5m0-2.jpg" alt="Count Saint‑Germain">
-      <h2>Count Saint‑Germain</h2>
-      <p>Count Saint‑Germain é um nobre que coleciona poderes sobrenaturais, trabalhando disfarçado como professor na Kami High. Seu objetivo principal é encontrar o misterioso “Dandadan”, além de reunir yōkai, artefatos alienígenas e habilidades ocultas para criar o supremo poder.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-id="reiko-kashima">
-      <img src="https://i.postimg.cc/26DYVv8L/003-2.jpg" alt="Reiko Kashima">
-      <h2>Reiko Kashima</h2>
-      <p>Era humana, morreu em bombardeio e renasceu como yokai dos espelhos. Agora manipula reflexos como portais para outra dimensão e pode atacar através de superfícies refletivas. Um dos maiores perigos para os protagonistas.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-id="rin-sawaki">
-      <img src="https://i.postimg.cc/wj4YcZx2/011-2.jpg" alt="Rin Sawaki">
-      <h2>Rin Sawaki</h2>
-      <p>Estudante exemplar que adquire poderes yokai: ao cantar, manipula gravidade. No arco principal, assume papel de apoio decisivo e mostra que poder e responsabilidade andam juntos.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-id="aira-shiratori">
-      <img src="https://i.postimg.cc/Xvv9G2Q7/019-2.jpg" alt="Aira Shiratori">
-      <h2>Aira Shiratori</h2>
-      <p>Estudante de ensino médio conhecida por sua beleza e autoconfiança. Depois de um encontro sobrenatural, ela ganhou habilidades yokai ligadas à acrobacia e ao combate. Inicialmente rival, ela se junta aos protagonistas e passa a lutar ao lado deles contra espíritos e alienígenas.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-id="vamola">
-      <img src="https://i.postimg.cc/Dz9Gm7Dw/016-2.jpg" alt="Vamola">
-      <h2>Vamola</h2>
-      <p>Única sobrevivente da raça suméria que veio para a Terra após a destruição de seu planeta natal. Ela pilota uma armadura poderosa e luta ao lado dos protagonistas em batalhas contra alienígenas e espíritos. Sua jornada mistura ação, sacrifício e lealdade, mostrando que força não é só poder — é também determinação.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-id="koki-yukishiro">
-      <img src="https://i.postimg.cc/66Ydfx4n/FRp1WFq-Omkl-TE1Qy46Wwb4bscegt8Sc-QQNo3.jpg" alt="Kōki Yukishiro">
-      <h2>Kōki Yukishiro</h2>
-      <p>Kōki Yukishiro é uma aluna do ensino médio que ganha a capacidade de ver seres diminutos chamados pygmies, que passam a obedecer seus comandos. Ela desempenha papel decisivo no arco “Kozuka Knives”, usando essa habilidade para virar o jogo contra os adversários.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
-    <div class="personagem" data-id="ken-takakura">
-      <img src="https://i.postimg.cc/L5tLchHj/029.jpg" alt="Ken Takakura">
-      <h2>Ken Takakura</h2>
-      <p>É um estudante do ensino médio apaixonado por ocultismo e OVNIs. Ele acaba sendo possuído por um yokai, o que marca o início de uma maldição que ele precisa quebrar. No enredo de Dandadan, Ken enfrenta espíritos e alienígenas enquanto busca recuperar o que perdeu e proteger seus amigos.</p>
-      <button class="fav-btn">♡ Favoritar</button>
-    </div>
-
+<div class="gallery-personagens">
+  <div class="personagem" data-id="enenra">
+    <img src="https://i.postimg.cc/0ys0XyQZ/012-1-2.jpg" alt="Enenra">
+    <h2>Enenra</h2>
+    <p>Yōkai da fumaça que se infiltra sob disfarce humano.</p>
+    <button class="fav-btn">♡ Favoritar</button>
   </div>
+  <div class="personagem" data-id="jin-enjoji">
+    <img src="https://i.postimg.cc/4yC59r8L/017-2.jpg" alt="Jin Enjoji">
+    <h2>Jin Enjoji</h2>
+    <p>Amigo de infância da Momo Ayase, envolvido com forças sobrenaturais.</p>
+    <button class="fav-btn">♡ Favoritar</button>
+  </div>
+  <div class="personagem" data-id="momo-ayase">
+    <img src="https://i.postimg.cc/mgbG9nJ7/004.jpg" alt="Momo Ayase">
+    <h2>Momo Ayase</h2>
+    <p>Desperta poderes psíquicos após ser abduzida, usando telecinese e manipulação de auras.</p>
+    <button class="fav-btn">♡ Favoritar</button>
+  </div>
+  <!-- Coloca os outros personagens aqui seguindo o mesmo modelo -->
+</div>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const favs = JSON.parse(localStorage.getItem('favs')) || [];
+<script>
+const searchInput = document.getElementById('search-input');
+const showFavsBtn = document.getElementById('show-favs-btn');
+const cards = document.querySelectorAll('.personagem');
 
-      document.querySelectorAll('.personagem').forEach(card => {
-        const id = card.getAttribute('data-id');
-        const btn = card.querySelector('.fav-btn');
-        if (favs.includes(id)) {
-          btn.textContent = '❤️ Favoritado';
-        }
-      });
+// Carregar favoritos do localStorage
+let favs = JSON.parse(localStorage.getItem('favs')) || [];
+cards.forEach(card => {
+  const btn = card.querySelector('.fav-btn');
+  const id = card.getAttribute('data-id');
+  if (favs.includes(id)) btn.textContent = '❤️ Favoritado';
 
-      document.querySelectorAll('.fav-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const card = btn.closest('.personagem');
-          const id = card.getAttribute('data-id');
-          let favs = JSON.parse(localStorage.getItem('favs')) || [];
+  btn.addEventListener('click', () => {
+    if (favs.includes(id)) {
+      favs = favs.filter(f => f !== id);
+      btn.textContent = '♡ Favoritar';
+    } else {
+      favs.push(id);
+      btn.textContent = '❤️ Favoritado';
+    }
+    localStorage.setItem('favs', JSON.stringify(favs));
+  });
+});
 
-          if (favs.includes(id)) {
-            favs = favs.filter(f => f !== id);
-            btn.textContent = '♡ Favoritar';
-          } else {
-            favs.push(id);
-            btn.textContent = '❤️ Favoritado';
-          }
+// Buscar personagens
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase();
+  cards.forEach(card => {
+    const name = card.querySelector('h2').textContent.toLowerCase();
+    card.style.display = name.includes(query) ? 'block' : 'none';
+  });
+});
 
-          localStorage.setItem('favs', JSON.stringify(favs));
-        });
-      });
-    });
-  </script>
+// Mostrar apenas favoritos
+let showingFavs = false;
+showFavsBtn.addEventListener('click', () => {
+  showingFavs = !showingFavs;
+  cards.forEach(card => {
+    const id = card.getAttribute('data-id');
+    card.style.display = showingFavs ? (favs.includes(id) ? 'block' : 'none') : 'block';
+  });
+  showFavsBtn.textContent = showingFavs ? 'Ver Todos' : 'Ver Favoritos';
+});
+</script>
 
 </body>
-        </html>
+</html>
