@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt‑br">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Galeria de Personagens</title>
@@ -11,14 +11,28 @@
       padding: 20px;
       margin: 0;
     }
-
+    #search-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: none;
+    }
+    #show-favs-btn {
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+    }
     .gallery-personagens {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       justify-items: center;
     }
-
     .personagem {
       background-color: #1c1c1c;
       border-radius: 12px;
@@ -27,23 +41,19 @@
       padding: 15px;
       box-shadow: 0 0 10px rgba(255,255,255,0.1);
     }
-
     .personagem img {
       width: 100%;
       object-fit: cover;
       border-radius: 10px;
     }
-
     .personagem h2 {
       margin: 10px 0 5px;
       color: #f0f0f0;
     }
-
     .personagem p {
       font-size: 14px;
       color: #ccc;
     }
-
     .fav-btn {
       margin-top: 10px;
       padding: 8px 12px;
@@ -61,7 +71,11 @@
 </head>
 <body>
 
+  <input type="text" id="search-input" placeholder="Buscar personagem...">
+  <button id="show-favs-btn">Ver Favoritos</button>
+
   <div class="gallery-personagens">
+    <!-- Exemplos de cards; repita para cada personagem -->
     <div class="personagem" data-id="enenra">
       <img src="https://i.postimg.cc/0ys0XyQZ/012-1-2.jpg" alt="Enenra">
       <h2>Enenra</h2>
@@ -98,7 +112,7 @@
     </div>
 
     <div class="personagem" data-id="count-saint-germain">
-      <img src="https://i.postimg.cc/PqCt9ZSj/1731779198-b6gubtanwhpn33kz185s2vjp5uz8lc65f4ibqyf5m0-2.jpg" alt="Count Saint‑Germain">
+      <img src="https://i.postimg.cc/PqCt9ZSj/1731779198-b6gubtanwhpn33kz185s2vjp5uz8lc65f4ibqyf5m0-2.jpg" alt="Count Saint‑Germain">
       <h2>Count Saint‑Germain</h2>
       <p>Count Saint‑Germain é um nobre que coleciona poderes sobrenaturais, trabalhando disfarçado como professor na Kami High. Seu objetivo principal é encontrar o misterioso “Dandadan”, além de reunir yōkai, artefatos alienígenas e habilidades ocultas para criar o supremo poder.</p>
       <button class="fav-btn">♡ Favoritar</button>
@@ -145,6 +159,7 @@
       <p>É um estudante do ensino médio apaixonado por ocultismo e OVNIs. Ele acaba sendo possuído por um yokai, o que marca o início de uma maldição que ele precisa quebrar. No enredo de Dandadan, Ken enfrenta espíritos e alienígenas enquanto busca recuperar o que perdeu e proteger seus amigos.</p>
       <button class="fav-btn">♡ Favoritar</button>
     </div>
+
   </div>
 
   <script>
@@ -180,19 +195,4 @@
   </script>
 
 </body>
-</html>  
-  </p>  
-      <button class="fav-btn">♡ Favoritar</button>
-    
-      </div>  
-    </div>  
-  </p>  
-   </div>  
- </div>  
-  </div>  
-  </p>  
-  </div>  
-</div>  
-</div>  
-</body>  
-</html>  
+        </html>
