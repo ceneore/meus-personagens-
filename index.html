@@ -10,6 +10,36 @@
       font-family: 'Poppins', sans-serif;
       padding: 20px;
       margin: 0;
+      <script>
+window.addEventListener('DOMContentLoaded', () => {
+  let favs = JSON.parse(localStorage.getItem('favs')) || [];
+
+  document.querySelectorAll('.personagem').forEach(card => {
+    const id = card.querySelector('h2').textContent; // usa o nome do personagem como id
+    if (favs.includes(id)) {
+      card.querySelector('.fav-btn').textContent = '❤️ Favoritado';
+    }
+  });
+
+  document.querySelectorAll('.fav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.personagem');
+      const id = card.querySelector('h2').textContent;
+      let favs = JSON.parse(localStorage.getItem('favs')) || [];
+
+      if (favs.includes(id)) {
+        favs = favs.filter(f => f !== id);
+        btn.textContent = '♡ Favoritar';
+      } else {
+        favs.push(id);
+        btn.textContent = '❤️ Favoritado';
+      }
+
+      localStorage.setItem('favs', JSON.stringify(favs));
+    });
+  });
+});
+</script>
     }
 
     input#search-input {
