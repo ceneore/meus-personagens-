@@ -60,17 +60,12 @@
       justify-items: center;
     }
     .personagem {
-      background-color: #1c1c1c;
-      border-radius: 16px;
-      width: 250px;
-      min-height: 480px;
-      text-align: center;
-      padding: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.8);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      .personagem img {
+  width: 100%;
+  height: auto;        /* ao invés de altura fixa */
+  object-fit: contain;  /* garante que a imagem inteira aparece */
+  border-radius: 10px;
+      }
     }
     .personagem img {
       width: 100%;
