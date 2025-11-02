@@ -56,6 +56,23 @@ window.addEventListener('DOMContentLoaded', () => {
       } else {
         favs.push(id);
         btn.textContent = '❤️ Favoritado';
+        // FILTRO FAVORITOS
+const verTodosBtn = document.getElementById('ver-todos');
+const verFavsBtn = document.getElementById('ver-favoritos');
+
+verTodosBtn.addEventListener('click', () => {
+  document.querySelectorAll('.personagem').forEach(card => {
+    card.style.display = 'block';
+  });
+});
+
+verFavsBtn.addEventListener('click', () => {
+  const favs = JSON.parse(localStorage.getItem('favs')) || [];
+  document.querySelectorAll('.personagem').forEach(card => {
+    const id = card.getAttribute('data-id');
+    card.style.display = favs.includes(id) ? 'block' : 'none';
+  });
+});
       }
       localStorage.setItem('favs', JSON.stringify(favs));
     });
