@@ -378,19 +378,9 @@
   window.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.personagem');
 
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        // remove zoom de todos
-        cards.forEach(c => c.classList.remove('zoomed'));
-        // adiciona zoom ao clicado
-        card.classList.add('zoomed');
       });
     });
-  });
-</script>';
-      });
-    });
-
+<script>
     // Pulsar botão de favoritar
     const favButtons = document.querySelectorAll('.fav-btn');
     favButtons.forEach(btn => {
@@ -400,9 +390,6 @@
       });
       btn.addEventListener('mouseleave', () => {
         btn.style.transform = 'scale(1)';
-      });
-    });
-  });
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
