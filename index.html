@@ -521,6 +521,64 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
+<style>
+/* === Ao clicar, card aumenta === */
+.personagem.clicked {
+  transform: scale(1.1);
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+/* === Botão voltar ao topo === */
+#backTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ff79c6;
+  color: #1a1a2e;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 0 15px #ff79c6;
+  transition: all 0.3s;
+  display: none;
+  z-index: 99;
+}
+
+#backTop:hover {
+  background: #ffb3d9;
+}
+</style>
+
+<!-- Botão voltar ao topo -->
+<button id="backTop">⬆ Voltar ao topo</button>
+
+<script>
+// === Cards aumentam ao clicar ===
+document.querySelectorAll('.personagem').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('clicked');
+  });
+});
+
+// === Mostrar botão voltar ao topo ao rolar ===
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backTop.style.display = 'block';
+  } else {
+    backTop.style.display = 'none';
+  }
+});
+
+// === Função do botão voltar ao topo ===
+backTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 </body>
   </html>
       
