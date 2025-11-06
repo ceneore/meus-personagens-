@@ -218,5 +218,21 @@
       });
     });
   </script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.personagem');
+  cards.forEach(card => {
+    let x = 0, y = 0;
+    let dx = (Math.random() - 0.5) * 2; // velocidade horizontal aleatória
+    let dy = (Math.random() - 0.5) * 2; // velocidade vertical aleatória
+
+    setInterval(() => {
+      x += dx;
+      y += dy;
+      if (Math.abs(x) > 15) dx *= -1;
+      if (Math.abs(y) > 15) dy *= -1;
+      card.style.transform = `translate(${x}px, ${y}px) scale(1.02)`;
+    }, 50);
+  });
+});
 </body>
 </html>
