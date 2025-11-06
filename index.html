@@ -219,22 +219,30 @@
     });
   </script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.personagem');
-  cards.forEach(card => {
-    let x = 0, y = 0;
-    let dx = (Math.random() - 0.5) * 2; // velocidade horizontal aleatória
-    let dy = (Math.random() - 0.5) * 2; // velocidade vertical aleatória
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.personagem');
+    cards.forEach(card => {
+      let offsetX = (Math.random() - 0.5) * 20;  // deslocamento X aleatório inicial
+      let offsetY = (Math.random() - 0.5) * 20;  // deslocamento Y aleatório inicial
+      let directionX = Math.random() > 0.5 ? 1 : -1;
+      let directionY = Math.random() > 0.5 ? 1 : -1;
+      const maxOffset = 10;  // quanto pode se mover no eixo
+      const speed = 0.05;    // velocidade de animação
 
-    setInterval(() => {
-      x += dx;
-      y += dy;
-      if (Math.abs(x) > 15) dx *= -1;
-      if (Math.abs(y) > 15) dy *= -1;
-      card.style.transform = `translate(${x}px, ${y}px) scale(1.02)`;
-    }, 50);
+      function animate() {
+        offsetX += directionX * speed;
+        offsetY += directionY * speed;
+
+        if (Math.abs(offsetX) > maxOffset) directionX *= -1;
+        if (Math.abs(offsetY) > maxOffset) directionY *= -1;
+
+        card.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.02)`;
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+    });
   });
-});
 </script>
 </body>
 </html>
