@@ -306,7 +306,31 @@
   </div>
 
   <script>
-    
+    // favoritos
+    window.addEventListener('DOMContentLoaded', () => {
+      const favs = JSON.parse(localStorage.getItem('favs')) || [];
+      document.querySelectorAll('.personagem').forEach(card => {
+        const id = card.getAttribute('data-id');
+        const btn = card.querySelector('.fav-btn');
+        if (favs.includes(id)) btn.textContent = '❤️ Favoritado';
+      });
+
+      document.querySelectorAll('.fav-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const card = btn.closest('.personagem');
+          const id = card.getAttribute('data-id');
+          let favs = JSON.parse(localStorage.getItem('favs')) || [];
+          if (favs.includes(id)) {
+            favs = favs.filter(f => f !== id);
+            btn.textContent = '♡ Favoritar';
+          } else {
+            favs.push(id);
+            btn.textContent = '❤️ Favoritado';
+          }
+          localStorage.setItem('favs', JSON.stringify(favs));
+        });
+      });
+
       // filtros
       const buttons = document.querySelectorAll('.filtros button');
       const personagens = document.querySelectorAll('.personagem');
@@ -325,7 +349,8 @@
       });
     });
   </script>
-
+    <script>
+  <script>
   <!-- seu script de favoritos e filtros vem aqui -->
 
     <script>
@@ -345,14 +370,25 @@
         card.style.transform = 'translateY(0)';
       }, index * 100); // efeito cascata
     });
-</script>
 
 
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.personagem');
-</script>
 
+      });
+    });
+<script>
+    // Pulsar botão de favoritar
+    const favButtons = document.querySelectorAll('.fav-btn');
+    favButtons.forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        btn.style.transition = 'all 0.3s ease';
+        btn.style.transform = 'scale(1.1)';
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'scale(1)';
+</script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.personagem');
