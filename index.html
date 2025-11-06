@@ -221,20 +221,32 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.personagem');
+
+    // efeito de entrada em cascata
+    cards.forEach((card, index) => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(30px)';
+      setTimeout(() => {
+        card.style.transition = 'all 0.6s ease-out';
+        card.style.opacity = 1;
+        card.style.transform = 'translateY(0)';
+      }, index * 100);
+    });
+
+    // efeito de movimento suave contínuo
     cards.forEach(card => {
-      let offsetX = (Math.random() - 0.5) * 20;  // deslocamento X aleatório inicial
-      let offsetY = (Math.random() - 0.5) * 20;  // deslocamento Y aleatório inicial
-      let directionX = Math.random() > 0.5 ? 1 : -1;
-      let directionY = Math.random() > 0.5 ? 1 : -1;
-      const maxOffset = 10;  // quanto pode se mover no eixo
-      const speed = 0.05;    // velocidade de animação
+      let offsetX = (Math.random() - 0.5) * 20;
+      let offsetY = (Math.random() - 0.5) * 20;
+      let dx = (Math.random() - 0.5) * 0.4;
+      let dy = (Math.random() - 0.5) * 0.4;
+      const maxOffset = 10;
 
       function animate() {
-        offsetX += directionX * speed;
-        offsetY += directionY * speed;
+        offsetX += dx;
+        offsetY += dy;
 
-        if (Math.abs(offsetX) > maxOffset) directionX *= -1;
-        if (Math.abs(offsetY) > maxOffset) directionY *= -1;
+        if (Math.abs(offsetX) > maxOffset) dx *= -1;
+        if (Math.abs(offsetY) > maxOffset) dy *= -1;
 
         card.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.02)`;
         requestAnimationFrame(animate);
