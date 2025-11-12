@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Galeria de Personagens</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #0a0a0a;
@@ -20,6 +20,7 @@
       text-align: center;
       margin-bottom: 20px;
     }
+
     .filtros button {
       font-family: 'Quicksand', sans-serif;
       font-weight: 600;
@@ -31,7 +32,9 @@
       border-radius: 12px;
       cursor: pointer;
       transition: background-color 0.2s, color 0.2s;
+      font-size: 1rem;
     }
+
     .filtros button:hover,
     .filtros button.active {
       background-color: #444444;
@@ -41,8 +44,9 @@
     .gallery-wrap {
       overflow-x: auto;
       white-space: nowrap;
-      padding-bottom: 10px;
+      padding-bottom: 15px;
     }
+
     .gallery-personagens {
       display: inline-flex;
       gap: 30px;
@@ -53,44 +57,43 @@
       display: inline-block;
       background-color: #151515;
       border-radius: 18px;
-      width: auto;
       text-align: center;
-      padding: 15px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.15);
+      padding: 10px;
+      box-shadow: 0 0 15px rgba(255, 121, 198, 0.3);
       transition: transform 0.3s, box-shadow 0.3s;
-      overflow: hidden;
     }
+
     .personagem:hover {
-      transform: scale(1.04);
-      box-shadow: 0 0 25px rgba(255,255,255,0.3);
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 121, 198, 0.6);
     }
+
     .personagem img {
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      /* se quiser limitar altura para manter proporção visual: */
-      max-height: 300px;
       border-radius: 15px;
       display: block;
-      margin: 0 auto 10px;
+      height: auto;
+      max-height: 400px;
+      width: auto;
+      max-width: 300px;
+      margin: 0 auto;
     }
+
     .personagem h2 {
-      margin: 10px 0 5px;
-      color: #c1c1c1;
+      margin-top: 10px;
+      color: #bdbdbd;
       font-family: 'Quicksand', sans-serif;
-      font-size: 1.4em;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      font-size: 1.2em;
     }
 
     .gallery-wrap::-webkit-scrollbar {
       height: 8px;
     }
+
     .gallery-wrap::-webkit-scrollbar-thumb {
       background: #444;
       border-radius: 4px;
     }
+
     .gallery-wrap::-webkit-scrollbar-track {
       background: transparent;
     }
@@ -109,109 +112,32 @@
   <div class="gallery-wrap">
     <div class="gallery-personagens">
       <!-- Dan da Dan -->
-      <div class="personagem" data-anime="dan-da-dan" data-id="momo-ayase">
-        <img src="https://i.postimg.cc/c1jx5ZKj/Picsart-25-11-03-00-33-27-851.jpg" alt="Momo Ayase">
-        <h2>Momo Ayase</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="jin-enjoji">
-        <img src="https://i.postimg.cc/wTyv63Kc/Picsart-25-11-03-00-32-36-858.jpg" alt="Jin Enjoji">
-        <h2>Jin Enjoji</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="enenra">
-        <img src="https://i.postimg.cc/3NwkjZcR/Picsart-25-11-03-00-36-00-583.jpg" alt="Enenra">
-        <h2>Enenra</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="mau-olhado">
-        <img src="https://i.postimg.cc/jqGT4X9J/Picsart-25-11-03-00-40-45-978.jpg" alt="Mau Olhado">
-        <h2>Mau Olhado</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="reiko-kashima">
-        <img src="https://i.postimg.cc/4dQcQy4K/Picsart-25-11-03-00-37-03-585.jpg" alt="Reiko Kashima">
-        <h2>Reiko Kashima</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="unji-zuma">
-        <img src="https://i.postimg.cc/3rZjgSdR/Picsart-25-11-03-00-41-38-577.jpg" alt="Unji Zuma">
-        <h2>Unji Zuma</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="rin-sawaki">
-        <img src="https://i.postimg.cc/YCPzvvj8/Picsart-25-11-03-00-35-03-843.jpg" alt="Rin Sawaki">
-        <h2>Rin Sawaki</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="count-saint-germain">
-        <img src="https://i.postimg.cc/90BB01qr/Picsart-25-11-03-00-39-41-882.jpg" alt="Count Saint-Germain">
-        <h2>Count Saint-Germain</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="vamola">
-        <img src="https://i.postimg.cc/YCCdGcR2/Picsart-25-11-03-00-34-16-310.jpg" alt="Vamola">
-        <h2>Vamola</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="aira-shiratori">
-        <img src="https://i.postimg.cc/mDHXLQw7/Picsart-25-11-03-00-38-41-747.jpg" alt="Aira Shiratori">
-        <h2>Aira Shiratori</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="okarun">
-        <img src="https://i.postimg.cc/65NSQ1FN/Picsart-25-11-03-00-28-53-418.jpg" alt="Okarun">
-        <h2>Okarun</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="koki-yukishiro">
-        <img src="https://i.postimg.cc/SxdH37Tx/Picsart-25-11-03-00-25-39-215.jpg" alt="Kōki Yukishiro">
-        <h2>Kōki Yukishiro</h2>
-      </div>
-
-      <div class="personagem" data-anime="dan-da-dan" data-id="jiji-mau-olhado">
-        <img src="https://i.postimg.cc/Qtw2S86H/Picsart-25-11-03-00-37-52-262.jpg" alt="Jiji & Mau Olhado">
-        <h2>Jiji & Mau Olhado</h2>
-      </div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/c1jx5ZKj/Picsart-25-11-03-00-33-27-851.jpg"><h2>Momo Ayase</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/wTyv63Kc/Picsart-25-11-03-00-32-36-858.jpg"><h2>Jin Enjoji</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/3NwkjZcR/Picsart-25-11-03-00-36-00-583.jpg"><h2>Enenra</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/jqGT4X9J/Picsart-25-11-03-00-40-45-978.jpg"><h2>Mau Olhado</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/4dQcQy4K/Picsart-25-11-03-00-37-03-585.jpg"><h2>Reiko Kashima</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/3rZjgSdR/Picsart-25-11-03-00-41-38-577.jpg"><h2>Unji Zuma</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/YCPzvvj8/Picsart-25-11-03-00-35-03-843.jpg"><h2>Rin Sawaki</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/90BB01qr/Picsart-25-11-03-00-39-41-882.jpg"><h2>Count Saint-Germain</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/YCCdGcR2/Picsart-25-11-03-00-34-16-310.jpg"><h2>Vamola</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/mDHXLQw7/Picsart-25-11-03-00-38-41-747.jpg"><h2>Aira Shiratori</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/65NSQ1FN/Picsart-25-11-03-00-28-53-418.jpg"><h2>Okarun</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/SxdH37Tx/Picsart-25-11-03-00-25-39-215.jpg"><h2>Kōki Yukishiro</h2></div>
+      <div class="personagem" data-anime="dan-da-dan"><img src="https://i.postimg.cc/Qtw2S86H/Picsart-25-11-03-00-37-52-262.jpg"><h2>Jiji & Mau Olhado</h2></div>
 
       <!-- Jujutsu Kaisen -->
-      <div class="personagem" data-anime="jujutsu-kaisen" data-id="itadori-yuuji">
-        <img src="https://i.postimg.cc/Gmwwwmxm/29-Sem-Titulo-20251102234830.png" alt="Itadori Yuuji">
-        <h2>Itadori Yuuji</h2>
-      </div>
-
-      <div class="personagem" data-anime="jujutsu-kaisen" data-id="hiromi-higuruma">
-        <img src="https://i.postimg.cc/TYL8yD30/Picsart-25-11-03-00-31-33-155.jpg" alt="Hiromi Higuruma">
-        <h2>Hiromi Higuruma</h2>
-      </div>
-
-      <div class="personagem" data-anime="jujutsu-kaisen" data-id="choso">
-        <img src="https://i-postimg.cc/MTcXfnDg/34-Sem-Titulo-20251108035130.png" alt="Choso">
-        <h2>Choso</h2>
-      </div>
-
-      <div class="personagem" data-anime="jujutsu-kaisen" data-id="satoru-gojo">
-        <img src="https://i-postimg.cc/8PKzpCkd/34-Sem-Titulo-20251107024300.png" alt="Satoru Gojo">
-        <h2>Satoru Gojo</h2>
-      </div>
-
-      <div class="personagem" data-anime="jujutsu-kaisen" data-id="toji-fushiguro">
-        <img src="https://i-postimg.cc/mZyR3V97/37-Sem-Titulo-20251112174958.png" alt="Toji Fushiguro">
-        <h2>Toji Fushiguro</h2>
-      </div>
+      <div class="personagem" data-anime="jujutsu-kaisen"><img src="https://i.postimg.cc/Gmwwwmxm/29-Sem-Titulo-20251102234830.png"><h2>Itadori Yuuji</h2></div>
+      <div class="personagem" data-anime="jujutsu-kaisen"><img src="https://i.postimg.cc/TYL8yD30/Picsart-25-11-03-00-31-33-155.jpg"><h2>Hiromi Higuruma</h2></div>
+      <div class="personagem" data-anime="jujutsu-kaisen"><img src="https://i.postimg.cc/MTcXfnDg/34-Sem-Titulo-20251108035130.png"><h2>Choso</h2></div>
+      <div class="personagem" data-anime="jujutsu-kaisen"><img src="https://i.postimg.cc/8PKzpCkd/34-Sem-Titulo-20251107024300.png"><h2>Satoru Gojo</h2></div>
+      <div class="personagem" data-anime="jujutsu-kaisen"><img src="https://i.postimg.cc/mZyR3V97/37-Sem-Titulo-20251112174958.png"><h2>Toji Fushiguro</h2></div>
 
       <!-- One Piece -->
-      <div class="personagem" data-anime="one-piece" data-id="roronoa-zoro">
-        <img src="https://i-postimg.cc/RVZN8hNL/Picsart-25-11-05-19-54-08-438.jpg" alt="Roronoa Zoro">
-        <h2>Roronoa Zoro</h2>
-      </div>
+      <div class="personagem" data-anime="one-piece"><img src="https://i.postimg.cc/RVZN8hNL/Picsart-25-11-05-19-54-08-438.jpg"><h2>Roronoa Zoro</h2></div>
 
       <!-- One Punch Man -->
-      <div class="personagem" data-anime="onepunch" data-id="garou">
-        <img src="https://i-postimg.cc/JhWWCzmr/Picsart-25-11-03-00-23-50-498.jpg" alt="Garou">
-        <h2>Garou</h2>
-      </div>
-
+      <div class="personagem" data-anime="onepunch"><img src="https://i.postimg.cc/JhWWCzmr/Picsart-25-11-03-00-23-50-498.jpg"><h2>Garou</h2></div>
     </div>
   </div>
 
@@ -228,8 +154,8 @@
           personagens.forEach(p => {
             p.style.display =
               filter === 'all' || p.getAttribute('data-anime') === filter
-              ? 'inline-block'
-              : 'none';
+                ? 'inline-block'
+                : 'none';
           });
         });
       });
