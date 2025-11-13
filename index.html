@@ -370,6 +370,57 @@
       </div>
     </div>
 
+<!-- Card de Anime com vídeo autoplay -->
+<div class="anime-card">
+  <video class="anime-video" autoplay muted loop playsinline>
+    <source src="https://drive.google.com/uc?export=download&id=1vrkVPcXWGy3Lr8vnI6bfFMVE1cFKjXiu" type="video/mp4">
+    Seu navegador não suporta vídeo.
+  </video>
+  <div class="anime-info">
+    <h2>Anime Teste</h2>
+  </div>
+</div>
+
+<style>
+.anime-card {
+  position: relative;
+  width: 400px;
+  height: 230px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.anime-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+.anime-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+
+.anime-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0,0,0,0.6);
+}
+
+.anime-info h2 {
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.3em;
+  margin: 0;
+}
+</style>
+
   </div>
 </section>
 
