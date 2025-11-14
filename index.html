@@ -9,6 +9,17 @@
   transform: translateZ(0);
   backface-visibility: hidden;
 }
+  /* ANIMAÇÃO SLIDE-IN */
+.slide-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
     .anime-card,
 .personagem {
   opacity: 0.8;
@@ -316,6 +327,19 @@
       });
     });
   </script>
+        <script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
 
+  document.querySelectorAll('.personagem, .anime-card').forEach(el => {
+    el.classList.add('slide-in');
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
